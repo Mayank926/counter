@@ -28,7 +28,7 @@ Understand React State for dynamic React apps render. Create a simple counter wh
 ```
 2. Check the deployed version
 
-Live Site Url [Mayank's Git hub pages]()
+Live Site Url [Mayank's Git hub pages](https://mayank926.github.io/counter/)
 
 ## My Process
 
