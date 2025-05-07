@@ -1,12 +1,78 @@
-# React + Vite
+# First React State Project
+React app to learn React State
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
+- [Overview](#overview)
+    - [Challenge](#challenge)
+    - [Screenshot](#screenshot)
+- [How to Run](#how-to-run)
+- [My Process](#my-process)
+    - [Built With](#built-with)
+    - [What I Learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Challenge
+Understand React State for dynamic React apps render. Create a simple counter which can be used to either increament or decreament the displayed number
 
-## Expanding the ESLint configuration
+### Screenshot
+![UI](./public/Capture.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to Run
+1. Local
+```sh
+    npm i
+    npm run dev
+```
+2. Check the deployed version
+
+Live Site Url [Mayank's Git hub pages]()
+
+## My Process
+
+### Built with
+- React 19.1.0
+- Vite 6.3.5
+
+### What I Learned
+
+1. Any React Component has props and state
+2. Props can be passed from outside to react component
+3. Props are immutable in nature
+4. State is local to a component
+5. Any change in state leads to re-render of the corresponding component
+6. We create state using below syntax
+    ```jsx
+    const [count,setCount] = React.useState(0);
+    ```
+    Here count is a state variable and setCount is the setter method. count is being initialized with 0
+7. Updating State variable
+    ```jsx
+    function increament(){
+        setCount(prevCount => prevCount + 1);
+    }
+    ```
+    OR
+    ```jsx
+    function increament(){
+        setCount(count + 1);
+    }
+    ```
+    setter function can accept the value to be set or it can accept a callback function.
+    The callback function has an advantage, that it gets the previous State value as parameter. Any state change which depend on previous state, hence need to updated via callback function only
+8. Used z-index and -(ve) margin property to super impose an html element over another
+    ```jsx
+    <button id='plusBtn' style={{ borderRadius: "50%", width: "50px", height: "50px", fontSize: "30px", 
+            fontWeight: "bold",backgroundColor: "grey" , position: "relative", zIndex: 2 ,marginRight: "-20px"}}
+            onClick={increament}>
+          +
+        </button>
+    ```
+## Author
+Mayank Madhav
+
+## Acknowledgments
+Free Code Camp Org.
+React Tutorial by Bob Ziroll [Youtube content link](https://www.youtube.com/watch?v=x4rFhThSX04&t=8394s)

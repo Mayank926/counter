@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count,setCount] = React.useState(0);
+  function increament(){
+    setCount(prevCount => prevCount+1);
+  }
+  function decreament(){
+    setCount(prevCount => prevCount-1);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div
+      className="test"
+      style={{
+        backgroundColor: "lightblue",
+        padding: "20px",
+        borderRadius: "10px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h1>is State important to know </h1>
+      <div style={{ display: "flex", gap: "0px", justifyContent: "center" , alignItems: "flex-end"}}>
+      <button id='minusBtn' style={{ borderRadius: "50%", width: "50px", height: "50px", fontSize: "30px", 
+            fontWeight: "bold",backgroundColor: "grey", position: "relative", zIndex: 2, marginLeft: "-20px"}}
+            onClick={decreament}>
+          -
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button id='displayBtn'
+          style={{ borderRadius: "50%", width: "100px", height: "100px", fontSize: "35px", fontWeight: "bold" }}	
+        >
+          {count}
+        </button>
+        <button id='plusBtn' style={{ borderRadius: "50%", width: "50px", height: "50px", fontSize: "30px", 
+            fontWeight: "bold",backgroundColor: "grey" , position: "relative", zIndex: 2 ,marginRight: "-20px"}}
+            onClick={increament}>
+          +
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
